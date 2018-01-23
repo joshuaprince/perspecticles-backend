@@ -1,6 +1,7 @@
 # Perspecticles
 ### A Chrome extension that exposes favorable and unfavorable viewpoints on controversial topics.  
 Created by Amber Graham, Joshua Prince, and Parker Luft at HackDavis 2017. [Devpost](https://devpost.com/software/perspecticles)
+
 **This is the backend code, for the frontend see [here](https://github.com/ambergraham/Perspecticles).**
 
 ## Inspiration
