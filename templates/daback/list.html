@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Favorable News Article</th>
+                <th>Unfavorable News Article</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in topic_entries %}
+            <tr>
+                <td>
+                    {{ i.topic }}
+                </td>
+                <td>
+                {% if i.article_p.title %}
+                    <a href="{{ i.article_p.url }}">{{ i.article_p.title }}</a> <i>({{ i.article_p.source }})</i>
+                {% else %}
+                    <i>No recently favorable articles found.</i>
+                {% endif %}
+                </td>
+                <td>
+                {% if i.article_n.title %}
+                    <a href="{{ i.article_n.url }}">{{ i.article_n.title }}</a> <i>({{ i.article_n.source }})</i>
+                {% else %}
+                    <i>No recently unfavorable articles found.</i>
+                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
